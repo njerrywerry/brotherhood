@@ -16,9 +16,20 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class = "navbar-brand" href = "#">
-          <img alt = "Brand" src = "/icon.png">
-        </a>
+        <a class = "navbar-brand" href = "#">E-NDUGU</a>
+        <ul class = "nav navbar-nav navbar-left">
+          <li><%= link_to "All Reports", root_path %></li>
+          <div class="btn-group">
+  <button id = "category" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categories <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+          <% Category.all.each do |category| %>
+            <li><%= link_to category.description, reports_path(category: category.description) %></li>
+          <% end %>
+        </ul>
+      </div>
+        </ul>
       </div>
     </div>
   </nav>

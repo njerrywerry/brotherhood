@@ -4,8 +4,14 @@ class ReportsController < ApplicationController
   # GET /reports
   # GET /reports.json
   def index
-    @reports = Report.all
-  end
+      if params[:category].blank?
+      @reports = Report.all
+    else
+      @category_id = Category.find_by(description: params[:category]).id
+      @reports = Report.where(category_id: @category_id)
+    end
+    end
+
 
   # GET /reports/1
   # GET /reports/1.json
@@ -69,6 +75,6 @@ class ReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.require(:report).permit(:title, :details, :phone_no, :message)
+      params.require(:report).permit(:title, :details, :phone_no, :message, :category_id)
     end
 end

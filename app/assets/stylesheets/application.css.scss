@@ -1,4 +1,22 @@
-
+$navbar-height: 70px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.panel {
+  width: 450px;
+  text-align: center;
+  margin-left: 370px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#newreport {
+  text-align: center;
+}
+
+#category {
+  margin-top: 20px;
+}

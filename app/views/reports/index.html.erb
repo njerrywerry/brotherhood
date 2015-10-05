@@ -2,32 +2,28 @@
 
 <h1>Reports</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Details</th>
-      <th>Phone no</th>
-      <th>Message</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @reports.each do |report| %>
-      <tr>
-        <td><%= report.title %></td>
-        <td><%= report.details %></td>
-        <td><%= report.phone_no %></td>
-        <td><%= report.message %></td>
-        <td><%= link_to 'Show', report %></td>
-        <td><%= link_to 'Edit', edit_report_path(report) %></td>
-        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class = "panel panel-default">
+      <div class = "panel-heading">
+        <h3><%= report.title %></h3>
+      </div>
+      <div class = "panel-body">
+        <p>
+        <%= report.details %>
+        <%= report.phone_no %>
+        <%= report.message %>
+      </p>
+      </div>
+      <div class = "panel-footer">
+        <%= link_to 'Show', report %> |
+        <%= link_to 'Edit', edit_report_path(report) %> |
+        <%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'New Report', new_report_path %>
+<div id = "newreport">
+<%= link_to 'New Report', new_report_path, class: "btn btn-primary" %>
+</div>
