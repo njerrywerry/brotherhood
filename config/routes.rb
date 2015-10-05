@@ -2,5 +2,6 @@ Rails.application.routes.draw do
   resources :categories
   resources :reports
 
-  root 'reports#index'
+  root 'reports#landing'
+    
 end

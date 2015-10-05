@@ -4,9 +4,8 @@ $navbar-height: 70px;
 @import "bootstrap";
 
 .panel {
-  width: 450px;
+  width: 400px;
   text-align: center;
-  margin-left: 370px;
 }
 
 h1 {
@@ -19,4 +18,15 @@ h1 {
 
 #category {
   margin-top: 20px;
+}
+
+#top {
+  background: url("/bgrnd4.jpg");
+  h1 {
+    margin-top: 280px;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 180px;
+  }
 }

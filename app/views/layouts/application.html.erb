@@ -16,24 +16,28 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class = "navbar-brand" href = "#">E-NDUGU</a>
-        <ul class = "nav navbar-nav navbar-left">
-          <li><%= link_to "All Reports", root_path %></li>
-          <div class="btn-group">
-  <button id = "category" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Categories <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-          <% Category.all.each do |category| %>
-            <li><%= link_to category.description, reports_path(category: category.description) %></li>
-          <% end %>
-        </ul>
+        <a class = "navbar-brand" href = "/">E-NDUGU</a>
       </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class = "nav navbar-nav navbar-left">
+          <li><%= link_to "All Reports", reports_path %></li>
+            <div class="btn-group">
+              <button id = "category" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categories <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <% Category.all.each do |category| %>
+                  <li><%= link_to category.description, reports_path(category: category.description) %></li>
+                <% end %>
+              </ul>
+            </div>
+            <li><%= link_to "Create Report", new_report_path %></li>
         </ul>
       </div>
     </div>
   </nav>
-<%= yield %>
+
+    <%= yield %>
 
 </body>
 </html>
