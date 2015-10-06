@@ -5,8 +5,12 @@ $navbar-height: 70px;
 
 .panel {
   width: 350px;
+  height: 320px;
   text-align: center;
   float: left;
+  .panel-body {
+    height: 200px;
+  }
 }
 
 h1 {
