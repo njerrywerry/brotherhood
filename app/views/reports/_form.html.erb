@@ -11,8 +11,11 @@
     </div>
   <% end %>
 
+  <div class = "panel panel-default" id = "panel2">
+    <div class = "panel-heading">
     <%= form.collection_select :category_id, Category.all, :id, :description, {promt: "Choose a category"} %>
-    <br>
+  </div>
+    <div class = "panel-body">
     <%= form.input :title, label: "Title of Report", input_html: {class: 'form-control'} %>
     <br>
     <%= form.input :details, label: "Details of Report", input_html: {class: 'form-control'} %>
@@ -20,6 +23,9 @@
     <%= form.input :phone_no, label: "Phone Number of Scammer", input_html: {class: 'form-control'} %>
     <br>
     <%= form.input :message, label: "Message you Received", input_html: {class: 'form-control'} %>
-    <br>
+  </div>
+    <div class = "panel-footer">
     <%= form.button :submit, class: "btn btn-primary" %>
+  </div>
+  </div>
 <% end %>
