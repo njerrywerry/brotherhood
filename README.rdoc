@@ -1,13 +1,12 @@
-== README
+Brotherhood
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A rails based anti SMS fraud crowdsourcing  site
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.2.2
 
-* System dependencies
+* System dependencies see gem file 
 
 * Configuration
 
