@@ -40,3 +40,12 @@ h1 {
   margin-left: 50px;
   margin-right: 20px;
 }
+
+#panel2 {
+  width: 800px;
+  height: 435px;
+  margin-left: 200px;
+  .panel-body {
+    height: 330px;
+  }
+}
