@@ -1,4 +1,8 @@
 class Report < ActiveRecord::Base
-  include Her::Model
   belongs_to :category
+
+  def self.search(query)
+    where("phone_no like ?", "%#{query}")
+  end
+
 end

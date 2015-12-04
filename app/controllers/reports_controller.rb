@@ -10,7 +10,13 @@ class ReportsController < ApplicationController
       @category_id = Category.find_by(description: params[:category]).id
       @reports = Report.where(category_id: @category_id)
     end
+
+    if params[:search]
+      @reports = Report.search(params[:search])
+    else
+      @reports = Report.all
     end
+  end
 
 
   # GET /reports/1
