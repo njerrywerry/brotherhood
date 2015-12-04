@@ -1,4 +1,4 @@
-<%= simple_form_for @report, html: {class: 'form-horizontal'} do |form| %>
+<%= simple_form_for @report, html: {class: 'form-horizontal', multipart: true} do |form| %>
   <% if @report.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
@@ -23,6 +23,14 @@
     <%= form.input :phone_no, label: "Phone Number of Scammer", input_html: {class: 'form-control'} %>
     <br>
     <%= form.input :message, label: "Message you Received", input_html: {class: 'form-control'} %>
+    <br>
+    <p>
+      <% if @report.image.exists? %>
+        <%= image_tag @report.image.url(:thumb) %>
+      <% end %>
+      <%= form.label :image, "Screenshot of Message" %>
+      <%= form.file_field :image %>
+    </p>
   </div>
     <div class = "panel-footer">
     <%= form.button :submit, class: "btn btn-primary" %>

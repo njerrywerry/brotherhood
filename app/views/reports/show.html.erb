@@ -20,5 +20,12 @@
   <%= @report.message %>
 </p>
 
+<p>
+  <strong>Screenshot:</strong>
+  <% if @report.image.exists? %>
+    <%= image_tag @report.image.url(:medium) %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>
