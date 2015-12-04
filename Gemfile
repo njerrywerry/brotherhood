@@ -49,3 +49,5 @@ gem 'simple_form', '~>3.0.2'
 gem 'puma'
 
 gem 'her'
+# paperclip gem for images
+gem 'paperclip'
